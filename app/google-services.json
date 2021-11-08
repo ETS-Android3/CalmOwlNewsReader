@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "385104880413",
+    "project_id": "calmowlnewsreader",
+    "storage_bucket": "calmowlnewsreader.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:385104880413:android:77787604b31ad6e208f7f4",
+        "android_client_info": {
+          "package_name": "com.example.android.calmowlnewsreader"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "385104880413-bqgs3fvdosgs4mejoprjoefsaj1c2oku.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBfy5lPP2HQf6XTZ4PyfWWemiNHg4BczxA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "385104880413-bqgs3fvdosgs4mejoprjoefsaj1c2oku.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

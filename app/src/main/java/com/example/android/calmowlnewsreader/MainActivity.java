@@ -1,6 +1,9 @@
 package com.example.android.calmowlnewsreader;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -11,6 +14,7 @@ import com.example.android.calmowlnewsreader.Model.Headlines;
 //import com.example.android.newsfeed.adapter.CategoryFragmentPagerAdapter;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -18,6 +22,8 @@ import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.android.calmowlnewsreader.databinding.ActivityMainBinding;
 import com.google.android.material.tabs.TabLayout;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -46,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
 
     EditText editText;
     Button btnSearch;
+    FirebaseAuth mAuth;
 
 
     @Override
@@ -60,6 +67,9 @@ public class MainActivity extends AppCompatActivity {
         editText = findViewById(R.id.editQuery);
         btnSearch = findViewById(R.id.btnSearch);
         final String country = getCountry();
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        mAuth = FirebaseAuth.getInstance();
 
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -204,47 +214,46 @@ public class MainActivity extends AppCompatActivity {
         return country.toLowerCase();
     }
 
-//    @Override
-//    public void onBackPressed() {
-//        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-//        if (drawer.isDrawerOpen(GravityCompat.START)) {
-//            drawer.closeDrawer(GravityCompat.START);
-//        } else {
-//            super.onBackPressed();
-//        }
-//    }
-//
-//    @Override
-//    public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-//        Log.i("FRAGMENTS", "switch between fragments on item click in nav drawer");
-//        int id = item.getItemId();
-//        if (id == R.id.nav_home) {
-//            if (Constants.FRAGMENT_HOME != currentFragment) {
-//                mViewPager2.setCurrentItem(Constants.FRAGMENT_HOME);
-//                currentFragment = Constants.FRAGMENT_HOME;
-//            }
-//        }
-//        else if (id == R.id.nav_world) {
-//            if (Constants.FRAGMENT_SPORTS != currentFragment) {
-//                mViewPager2.setCurrentItem(Constants.FRAGMENT_SPORTS);
-//                currentFragment = Constants.FRAGMENT_SPORTS;
-//            }
-//        }
-//        else if (id == R.id.nav_science) {
-//            if (Constants.FRAGMENT_SCIENCE != currentFragment) {
-//                mViewPager2.setCurrentItem(Constants.FRAGMENT_SCIENCE);
-//                currentFragment = Constants.FRAGMENT_SCIENCE;
-//            }
-//        }
-//        else if (id == R.id.nav_dashboard) {
-//            if (Constants.FRAGMENT_DASHBOARD != currentFragment) {
-//                mViewPager2.setCurrentItem(Constants.FRAGMENT_DASHBOARD);
-//                currentFragment = Constants.FRAGMENT_DASHBOARD;
-//            }
-//        }
-//
-//        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-//        drawer.closeDrawer(GravityCompat.START);
-//        return true;
-//    }
+
+    @Override
+    // Initialize the contents of the Activity's options menu
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Inflate the Options Menu we specified in XML
+        getMenuInflater().inflate(R.menu.main, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.action_settings:
+                // User chose the "Settings" item, show the app settings UI...
+                return true;
+            case R.id.logout:
+                logout();
+                // User chose the "Settings" item, show the app settings UI...
+                return true;
+            default:
+                // If we got here, the user's action was not recognized.
+                // Invoke the superclass to handle it.
+                return super.onOptionsItemSelected(item);
+
+        }
+    }
+
+    private void logout() {
+        mAuth.signOut();
+        startActivity(new Intent(MainActivity.this, LoginActivity.class));
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user == null){
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        }
+    }
+
 }
