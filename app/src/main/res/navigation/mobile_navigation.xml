@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.android.calmowlnewsreader.fragment.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_world"
+        android:name="com.example.android.calmowlnewsreader.fragment.SportsFragment"
+        android:label="@string/world"
+        tools:layout="@layout/fragment_sports" />
+
+    <fragment
+        android:id="@+id/nav_science"
+        android:name="com.example.android.calmowlnewsreader.fragment.ScienceFragment"
+        android:label="@string/science"
+        tools:layout="@layout/fragment_science" />
+    <fragment
+        android:id="@+id/nav_dashboard"
+        android:name="com.example.android.calmowlnewsreader.fragment.DashboardFragment"
+        android:label="@string/dashboard"
+        tools:layout="@layout/fragment_dashboard" />
+</navigation>
