@@ -27,6 +27,11 @@ Screenshots
 ![image](https://user-images.githubusercontent.com/47298653/140945215-9fe22fdd-5a3d-45c4-8065-fe73f85a2451.png)
 
 
+- Detail Page
+
+![image](https://user-images.githubusercontent.com/47298653/140971271-bae9c26c-ba10-46fd-aeda-8147f3ea3c75.png)
+
+
 
 Members
 ====
