@@ -52,7 +52,7 @@ Future Improvements
 - User profile page
 
 
-Explannations 
+Explanations 
 ====
 
 1. Adapter.java
