@@ -17,11 +17,11 @@ Members
 Functionalities
 ====
 - Fetch articles from News API using retrofit.
-- Swipe to refresh
-- Search bar: look for an article with keyword
+- Swipe to refresh.
+- Search bar: look for an article with keyword.
 - Detailed page corresponding to each news headline.
-- User and Google Authentication with Firebase
-
+- User and Google Authentication with Firebase.
+- Splash screen: display page while waiting for the app to boot.
 
 Future Improvements
 ====
