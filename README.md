@@ -60,28 +60,16 @@ Future Improvements
 Explanations 
 ====
 
-1. Adapter.java
-
-Content filler, takes 2 args: context (MainActivity.this here), List
+1. Adapter.java: content filler, takes 2 args: context (MainActivity.this here), List
 
 
-2. articles
-
-object of List<Articles>, or a list of Articles objects, each contains info relating to an article.
+2. articles: an object of List<Articles>, or a list of Articles objects, each contains info relating to an article.
 
 
-3. ApiInterface.java
-  
-Constructs URL with appended paramenters.
+3. ApiInterface.java: Constructs URL with appended paramenters.
 
 
-4. ApiClient.java
-  
-Implements retrofit to interact with newsapi, uses URL constructed by ApiInterface.java
+4. ApiClient.java: Implements retrofit to interact with newsapi, uses URL constructed by ApiInterface.java
 
 
-5. Retrofit Client
-  
-Retrofit is a type-safe REST client for Android, Java and Kotlin developed by Square. 
-The library provides a powerful framework for authenticating and interacting with APIs 
-and sending network requests with OkHttp.
+5. Retrofit Client: Retrofit is a type-safe REST client for Android, Java and Kotlin developed by Square. The library provides a powerful framework for authenticating and interacting with APIs and sending network requests with OkHttp.
