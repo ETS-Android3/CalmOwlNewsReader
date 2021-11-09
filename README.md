@@ -55,7 +55,7 @@ Future Improvements
 ====
 - Bottom navigation with different categories
 - User profile page
-
+- Machine learning user experiences
 
 Explanations 
 ====
