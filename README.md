@@ -77,6 +77,7 @@ Implements retrofit to interact with newsapi, uses URL constructed by ApiInterfa
 
 
 5. Retrofit
+
 Retrofit is a type-safe REST client for Android, Java and Kotlin developed by Square. 
 The library provides a powerful framework for authenticating and interacting with APIs 
 and sending network requests with OkHttp.
