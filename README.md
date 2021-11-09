@@ -5,6 +5,29 @@ Description
 A news reader app using News API with Firebase user and google Authentication
 
 
+Screenshots
+====
+- Splash screen
+
+![image](https://user-images.githubusercontent.com/47298653/140940608-73736764-7651-4371-a86b-7094f839a542.png)
+
+
+- Log in 
+
+![image](https://user-images.githubusercontent.com/47298653/140940489-5751cfc7-4a16-4ca6-a7ea-e3ed38dd817f.png)
+
+
+- Register
+
+![image](https://user-images.githubusercontent.com/47298653/140940681-924ff4a1-bed8-479f-9987-07d5ffe0d0fd.png)
+
+
+- Main Page
+
+![image](https://user-images.githubusercontent.com/47298653/140945215-9fe22fdd-5a3d-45c4-8065-fe73f85a2451.png)
+
+
+
 Members
 ====
 1. Lê Việt Anh
