@@ -60,6 +60,8 @@ Future Improvements
 Explanations 
 ====
 
+## How to fetch data from News API
+
 1. Adapter.java: content filler, takes 2 args: context (MainActivity.this here), List
 
 
@@ -73,3 +75,4 @@ Explanations
 
 
 5. Retrofit Client: Retrofit is a type-safe REST client for Android, Java and Kotlin developed by Square. The library provides a powerful framework for authenticating and interacting with APIs and sending network requests with OkHttp.
+
