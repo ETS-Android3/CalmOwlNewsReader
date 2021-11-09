@@ -134,15 +134,15 @@ public class MainActivity extends AppCompatActivity {
                     swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                         @Override
                         public void onRefresh() {
-                            retrieveJson(editText.getText().toString(),country,API_KEY);
+                            retrieveJson(editText.getText().toString(), country, API_KEY);
                         }
                     });
-                    retrieveJson(editText.getText().toString(),country,API_KEY);
+                    retrieveJson(editText.getText().toString(), country, API_KEY);
                 }else{
                     swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                         @Override
                         public void onRefresh() {
-                            retrieveJson("",country,API_KEY);
+                            retrieveJson("", country, API_KEY);
                         }
                     });
                     retrieveJson("", country, API_KEY);

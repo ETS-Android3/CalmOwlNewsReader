@@ -13,7 +13,9 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="50dp"
-        android:background="@color/white"/>
+        android:background="@color/black"
+        app:titleTextColor="@color/white"
+        />
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,7 +28,7 @@
         android:paddingVertical="0dp"
 
         android:columnCount="2"
-        android:background="@drawable/black_background"
+        android:background="@drawable/grey_background"
         android:rowCount="2">
 
         <EditText
@@ -35,11 +37,11 @@
             android:layout_height="wrap_content"
             android:hint="Search"
             android:fontFamily="@font/g_bold"
-            android:textColor="@color/grey"
+            android:textColor="@color/white"
             android:textColorHint="@color/white"
             android:paddingVertical="10dp"
             android:paddingHorizontal="20dp"
-            android:background="@drawable/black_background"
+            android:background="@drawable/grey_background"
             android:layout_column="0"
             android:layout_columnWeight="1"
             android:layout_row="0"
@@ -50,7 +52,7 @@
             android:layout_height="wrap_content"
             android:layout_row="0"
             android:layout_column="1"
-            android:background="@drawable/black_background"
+            android:background="@drawable/grey_background"
             android:drawableRight="@drawable/ic_search_black_24dp"
             android:paddingRight="20dp" />
     </GridLayout>

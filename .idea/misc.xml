@@ -4,13 +4,24 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/AndroidStudioProjects/CalmOwlNewsReader/app/src/main/res/drawable/black_background.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/CalmOwlNewsReader/app/src/main/res/drawable/ic_favorite_24.xml" value="0.11197916666666667" />
+        <entry key="..\:/AndroidStudioProjects/CalmOwlNewsReader/app/src/main/res/drawable/ic_home_24.xml" value="0.11197916666666667" />
         <entry key="..\:/AndroidStudioProjects/CalmOwlNewsReader/app/src/main/res/drawable/ic_search_black_24dp.xml" value="0.1125" />
+        <entry key="..\:/AndroidStudioProjects/CalmOwlNewsReader/app/src/main/res/layout-w936dp/fragment_science.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/CalmOwlNewsReader/app/src/main/res/layout-w936dp/fragment_sports.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/CalmOwlNewsReader/app/src/main/res/layout/activity_detailed.xml" value="0.25" />
-        <entry key="..\:/AndroidStudioProjects/CalmOwlNewsReader/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/AndroidStudioProjects/CalmOwlNewsReader/app/src/main/res/layout/activity_login.xml" value="0.25" />
+        <entry key="..\:/AndroidStudioProjects/CalmOwlNewsReader/app/src/main/res/layout/activity_main.xml" value="0.22" />
+        <entry key="..\:/AndroidStudioProjects/CalmOwlNewsReader/app/src/main/res/layout/activity_profile.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/CalmOwlNewsReader/app/src/main/res/layout/activity_register.xml" value="0.25" />
         <entry key="..\:/AndroidStudioProjects/CalmOwlNewsReader/app/src/main/res/layout/activity_splash_screen.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/CalmOwlNewsReader/app/src/main/res/layout/app_bar_main.xml" value="0.10461956521739131" />
+        <entry key="..\:/AndroidStudioProjects/CalmOwlNewsReader/app/src/main/res/layout/fragment_science.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/CalmOwlNewsReader/app/src/main/res/layout/fragment_sports.xml" value="0.1" />
         <entry key="..\:/AndroidStudioProjects/CalmOwlNewsReader/app/src/main/res/layout/items.xml" value="0.1" />
-        <entry key="..\:/AndroidStudioProjects/CalmOwlNewsReader/app/src/main/res/menu/main.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/CalmOwlNewsReader/app/src/main/res/menu/activity_main_drawer.xml" value="0.1" />
+        <entry key="..\:/AndroidStudioProjects/CalmOwlNewsReader/app/src/main/res/menu/bottom_navigation.xml" value="0.2" />
+        <entry key="..\:/AndroidStudioProjects/CalmOwlNewsReader/app/src/main/res/menu/main.xml" value="0.25" />
       </map>
     </option>
   </component>
