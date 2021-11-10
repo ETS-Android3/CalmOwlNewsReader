@@ -182,6 +182,7 @@ public class MainActivity extends AppCompatActivity {
                     swipeRefreshLayout.setRefreshing(false);
                     articles.clear();
                     articles = response.body().getArticles();
+                        // fill in the contents from articles
                     adapter = new Adapter(MainActivity.this, articles);
                     recyclerView.setAdapter(adapter);
                 }

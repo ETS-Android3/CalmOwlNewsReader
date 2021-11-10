@@ -103,9 +103,6 @@
                         android:textColor="@color/black"
                         android:id="@+id/tvDesc"/>
                 </LinearLayout>
-
-
-
             </androidx.cardview.widget.CardView>
 
 

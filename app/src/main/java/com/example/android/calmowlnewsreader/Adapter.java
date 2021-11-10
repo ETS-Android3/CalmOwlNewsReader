@@ -61,6 +61,7 @@ public class Adapter extends RecyclerView.Adapter<Adapter.ViewHolder> {
         holder.cardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                    // switch to Detail Page (Detailed activity) on card click
                 Intent intent = new Intent(context, Detailed.class);
                 intent.putExtra("title", a.getTitle());
                 intent.putExtra("source", a.getSource().getName());
