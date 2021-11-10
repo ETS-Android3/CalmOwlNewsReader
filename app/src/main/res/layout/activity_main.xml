@@ -15,6 +15,7 @@
         android:layout_height="50dp"
         android:background="@color/black"
         app:titleTextColor="@color/white"
+        app:menu="@menu/toolbar_items"
         />
     <LinearLayout
         android:layout_width="match_parent"
