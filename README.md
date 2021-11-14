@@ -1,8 +1,14 @@
 # CalmOwlNewsReader
 
+
 Description 
 ====
 A news reader app using News API with Firebase user and google Authentication for final project.
+
+
+Report
+====
+https://docs.google.com/document/d/1F-b5YGRRCdEDtSLUVXpkvFnoOMViFQPCH8HkP3sQYow/edit?usp=sharing
 
 
 Midterm project
