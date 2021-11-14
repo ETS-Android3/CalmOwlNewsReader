@@ -2,7 +2,12 @@
 
 Description 
 ====
-A news reader app using News API with Firebase user and google Authentication
+A news reader app using News API with Firebase user and google Authentication for final project.
+
+
+Midterm project
+====
+https://github.com/vietanh2000april/RacheNewsReader
 
 
 Screenshots
