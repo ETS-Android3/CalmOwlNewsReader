@@ -9,13 +9,13 @@ import retrofit2.http.Query;
 public interface ApiInterface {
     @GET("top-headlines")
     Call<Headlines> getHeadlines (
-    @Query("country") String country,
-    @Query("apiKey") String apikey
+        @Query("country") String country,
+        @Query("apiKey") String apikey
     );
     @GET("everything")
     Call<Headlines> getSpecificData (
-            @Query("q") String query,
-            @Query("apiKey") String apikey
+        @Query("q") String query,
+        @Query("apiKey") String apikey
     );
 
 

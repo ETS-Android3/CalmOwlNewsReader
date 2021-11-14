@@ -7,4 +7,6 @@ public class Constants {
     public static final int FRAGMENT_SPORTS = 2;
     public static final int FRAGMENT_SCIENCE = 3;
     public static final int NEWS_LOADER_ID = 1;
+
+//    business entertainment general health science sports technology
 }

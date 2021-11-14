@@ -1,18 +1,23 @@
 package com.example.android.calmowlnewsreader;
 
+import android.app.SearchManager;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.SearchView;
 import android.widget.Toast;
 
 import com.example.android.calmowlnewsreader.Model.Articles;
 import com.example.android.calmowlnewsreader.Model.Headlines;
 //import com.example.android.newsfeed.adapter.CategoryFragmentPagerAdapter;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -21,6 +26,12 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.android.calmowlnewsreader.databinding.ActivityMainBinding;
+import com.google.android.gms.auth.api.signin.GoogleSignIn;
+import com.google.android.gms.auth.api.signin.GoogleSignInClient;
+import com.google.android.gms.auth.api.signin.GoogleSignInOptions;
+import com.google.android.gms.common.SignInButton;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.android.material.navigation.NavigationBarView;
 import com.google.android.material.tabs.TabLayout;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -54,6 +65,10 @@ public class MainActivity extends AppCompatActivity {
     Button btnSearch;
     FirebaseAuth mAuth;
 
+    ViewPager2 viewPager2;
+    BottomNavigationView bottomNavigationView;
+    ViewPagerAdapter viewPagerAdapter;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,6 +85,41 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         mAuth = FirebaseAuth.getInstance();
+        viewPager2 = findViewById(R.id.view_pager_2);
+
+
+        viewPagerAdapter = new ViewPagerAdapter(this);
+        viewPager2.setAdapter(viewPagerAdapter);
+
+
+//        bottomNavigationView.setOnItemSelectedListener(new NavigationBarView.OnItemSelectedListener() {
+//            @Override
+//            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+//                int id = item.getItemId();
+//                if (id == R.id.bottomHome) {
+//
+//                }
+//                else if (id == R.id.bottomFavorite) {
+//                    viewPager2.setCurrentItem(Constants.FRAGMENT_SCIENCE);
+//                }
+//                else if (id == R.id.bottomSettings) {
+//
+//                }
+//                return true;
+//            }
+//        });
+
+
+//        viewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
+//            @Override
+//            public void onPageSelected(int position) {
+//                super.onPageSelected(position);
+//                switch (position) {
+//                    case Constants.FRAGMENT_SCIENCE:
+//                        bottomNavigationView.getMenu().findItem(R.id.bottomFavorite).setChecked(true);
+//                        break;
+//                }
+//        });
 
 
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
@@ -88,15 +138,15 @@ public class MainActivity extends AppCompatActivity {
                     swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                         @Override
                         public void onRefresh() {
-                            retrieveJson(editText.getText().toString(),country,API_KEY);
+                            retrieveJson(editText.getText().toString(), country, API_KEY);
                         }
                     });
-                    retrieveJson(editText.getText().toString(),country,API_KEY);
+                    retrieveJson(editText.getText().toString(), country, API_KEY);
                 }else{
                     swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
                         @Override
                         public void onRefresh() {
-                            retrieveJson("",country,API_KEY);
+                            retrieveJson("", country, API_KEY);
                         }
                     });
                     retrieveJson("", country, API_KEY);
@@ -104,76 +154,19 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-//        DrawerLayout drawer = findViewById(R.id.drawer_layout);
-//        ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
-//                this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
-//        drawer.addDrawerListener(toggle);
-//        toggle.syncState();
-//
-//
-//        mViewPager2 = findViewById(R.id.view_pager_2);
-//        mTabLayout = findViewById(R.id.sliding_tabs);
-//        mViewPagerAdapter = new ViewPagerAdapter(this);
-//        mViewPager2.setAdapter(mViewPagerAdapter);
-//
-//
-//        new TabLayoutMediator(mTabLayout, mViewPager2, new TabLayoutMediator.TabConfigurationStrategy() {
-//            @Override
-//            public void onConfigureTab(@NonNull TabLayout.Tab tab, int position) {
-//                switch (position) {
-//                    case Constants.FRAGMENT_DASHBOARD:
-//                        tab.setText(getString(R.string.dashboard));
-//                        break;
-//                    case Constants.FRAGMENT_HOME:
-//                        tab.setText(getString(R.string.home));
-//                        break;
-//                    case Constants.FRAGMENT_SPORTS:
-//                        tab.setText(getString(R.string.sports));
-//                        break;
-//                    case Constants.FRAGMENT_SCIENCE:
-//                        tab.setText(getString(R.string.science));
-//                        break;
-//                }
-//            }
-//        }).attach();
-//        mTabLayout.setTabGravity(TabLayout.GRAVITY_FILL);
-//
-//
-//        NavigationView navigationView = findViewById(R.id.nav_view);
-//        assert navigationView != null;
-//        navigationView.setNavigationItemSelectedListener(this);
-//        navigationView.getMenu().findItem(R.id.nav_home).setChecked(true);
-//
-//
-//        mViewPager2.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
-//            @Override
-//            public void onPageSelected(int position) {
-//                super.onPageSelected(position);
-//                switch (position) {
-//                    case Constants.FRAGMENT_HOME:
-//                        currentFragment = Constants.FRAGMENT_HOME;
-//                        navigationView.getMenu().findItem(R.id.nav_home).setChecked(true);
-//                        break;
-//                    case Constants.FRAGMENT_SPORTS:
-//                        currentFragment = Constants.FRAGMENT_SPORTS;
-//                        navigationView.getMenu().findItem(R.id.nav_world).setChecked(true);
-//                        break;
-//                    case Constants.FRAGMENT_SCIENCE:
-//                        currentFragment = Constants.FRAGMENT_SCIENCE;
-//                        navigationView.getMenu().findItem(R.id.nav_science).setChecked(true);
-//                        break;
-//                    case Constants.FRAGMENT_DASHBOARD:
-//                        currentFragment = Constants.FRAGMENT_DASHBOARD;
-//                        navigationView.getMenu().findItem(R.id.nav_dashboard).setChecked(true);
-//                        break;
-//                }
-//            }
-//        });
 
 
 
+    }
+
+
+    @Override
+    protected void onStart() {
+        super.onStart();
+        FirebaseUser user = mAuth.getCurrentUser();
+        if (user == null){
+            startActivity(new Intent(MainActivity.this, LoginActivity.class));
+        }
     }
 
 
@@ -193,6 +186,7 @@ public class MainActivity extends AppCompatActivity {
                     swipeRefreshLayout.setRefreshing(false);
                     articles.clear();
                     articles = response.body().getArticles();
+                        // fill in the contents from articles
                     adapter = new Adapter(MainActivity.this, articles);
                     recyclerView.setAdapter(adapter);
                 }
@@ -226,9 +220,6 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.action_settings:
-                // User chose the "Settings" item, show the app settings UI...
-                return true;
             case R.id.logout:
                 logout();
                 // User chose the "Settings" item, show the app settings UI...
@@ -247,13 +238,24 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @Override
-    protected void onStart() {
-        super.onStart();
-        FirebaseUser user = mAuth.getCurrentUser();
-        if (user == null){
-            startActivity(new Intent(MainActivity.this, LoginActivity.class));
-        }
-    }
+//    public boolean onCreateOptionsMenu(Menu menu) {
+//        MenuInflater menuInflater = getMenuInflater();
+//        menuInflater.inflate(R.menu.toolbar_items, menu);
+//
+//        MenuItem searchItem = menu.findItem(R.id.action_search);
+//
+//        SearchManager searchManager = (SearchManager) MainActivity.this.getSystemService(Context.SEARCH_SERVICE);
+//
+//        SearchView searchView = null;
+//        if (searchItem != null) {
+//            searchView = (SearchView) searchItem.getActionView();
+//        }
+//        if (searchView != null) {
+//            searchView.setSearchableInfo(searchManager.getSearchableInfo(MainActivity.this.getComponentName()));
+//        }
+//        return super.onCreateOptionsMenu(menu);
+//    }
+
+
 
 }

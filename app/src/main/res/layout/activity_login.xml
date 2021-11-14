@@ -73,6 +73,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="24dp"
+            android:backgroundTint="@color/black"
+            android:textColor="@color/white"
             android:text="Login"/>
 
         <LinearLayout
@@ -100,6 +102,15 @@
                 style="@style/Theme.MaterialComponents"/>
 
         </LinearLayout>
+
+        <com.shobhitpuri.custombuttons.GoogleSignInButton
+            android:id="@+id/btnGoogleSignIn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_centerInParent="true"
+            android:text="@string/google_sign_in"
+            />
 
     </LinearLayout>
 

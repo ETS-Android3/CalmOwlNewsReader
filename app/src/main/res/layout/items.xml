@@ -13,7 +13,7 @@
         app:cardCornerRadius="0dp">
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp">
+            android:layout_height="180dp">
             <ProgressBar
                 android:layout_width="50dp"
                 android:layout_height="50dp"
